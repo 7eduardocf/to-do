@@ -16,7 +16,7 @@ function App() {
         <main className={styles.main}>
             <div>
                 <h2>O que você vai fazer?</h2>
-                <FormularioDeTarefas btnText={"Criar tarefa"}/>
+                <FormularioDeTarefas btnText={"Criar tarefa"} taskList={taskList} setTaskList={setTaskList}/>
             </div>
             <div>
                 <h2>Suas tarefas:</h2>
