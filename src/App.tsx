@@ -1,17 +1,16 @@
+import Header from "./assets/components/Header/header"
+import Footer from "./assets/components/Rodape/footer"
+import styles from "./app.module.css"
 
 function App() {
 
-    const nome: string = "Eduardo"
-    const idade: number = 22
-    const isWorking: boolean = true
-
-    return (
-        <div>
-            <h1>React com typescript</h1>
-            <h2>Nome:{nome}</h2>
-            <h2>Idade:{idade}</h2>
-            {isWorking && <p>Está trabalhando</p>}
-        </div>
+    return (<>
+        <Header/>
+        <main className={styles.main}>
+            
+        </main>
+        <Footer/>
+    </>
     )
 }
 
