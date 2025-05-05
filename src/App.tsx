@@ -3,8 +3,13 @@ import Footer from "./assets/components/Rodape/footer"
 import styles from "./app.module.css"
 import FormularioDeTarefas from "./assets/components/Formulario-de-tarefas"
 import ListaDeTarefas from "./assets/components/Lista-de-tarefas"
+import { ITask } from "./assets/Interfaces/Tarefa"
+import { useState } from "react"
+
 
 function App() {
+
+    const [taskList, setTaskList] = useState<ITask[]>([])
 
     return (<>
         <Header/>
