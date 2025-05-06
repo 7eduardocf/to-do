@@ -7,7 +7,7 @@ interface Props {
     taskList: ITask[]
     setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
     task?: ITask | null
-    handleUpdate?: null
+    handleUpdate?(id: number,title:string, difficulty: number): void
 }
 
 function FormularioDeTarefas({ btnText,taskList,setTaskList,task,handleUpdate}: Props) {
@@ -28,7 +28,7 @@ function FormularioDeTarefas({ btnText,taskList,setTaskList,task,handleUpdate}: 
         e.preventDefault()
 
         if(handleUpdate) {
-            console.log(handleUpdate);
+            handleUpdate(id,title,difficulty)
         }else{
             const id = Math.floor(Math.random() *1000)
             const newTask :ITask = {id,title,difficulty}

@@ -20,6 +20,17 @@ function App() {
         )
     }
 
+    const updateTask = (id: number,title:string, difficulty: number)=>{
+        const updateTask: ITask = {id,title,difficulty}
+
+        const updateItens = taskList.map((task) =>{
+            return task.id === updateTask.id ? updateTask : task
+        })
+        setTaskList(updateItens)
+
+        hideOrShowModal(false)
+    }
+
     const hideOrShowModal = (display: boolean) =>{
         const modal = document.querySelector("#modal")
         if(display){
@@ -40,7 +51,7 @@ function App() {
         <main className={styles.main}>
             <div>
                 <h2>O que você vai fazer?</h2>
-                <FormularioDeTarefas btnText={"Criar tarefa"} taskList={taskList} setTaskList={setTaskList} />
+                <FormularioDeTarefas btnText={"Criar tarefa"} taskList={taskList} setTaskList={setTaskList} handleUpdate={updateTask}/>
             </div>
             <div>
                 <h2>Suas tarefas:</h2>
